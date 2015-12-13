@@ -1,6 +1,6 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-calm">
+    <ion-nav-bar class="bar-positive">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -19,16 +19,18 @@
     </ion-header-bar>-->
     <!--<ion-content style="background-image: url(img/bruceLee.jpg);">-->
     <ion-content>
-      <ion-list>
-        <ion-item class="item-remove-animate item-avatar item-icon-right" style="background-color:purple; height: 100px;">
-          <img style="width:100%" class="full-image" src="img/adam.jpg">
-          <h3 style="color: #e5e5e5;width:100%;">{{asdf}}</h3>
+      <ion-list id="menuLinks">
+        <ion-item class="loginBg" style="height: 100px;">
+          {{asdf}}
         </ion-item>
-        <ion-item menu-close ng-click="login()">
+        <!--<ion-item menu-close ng-click="login()">
           <i class="icon ion-log-in">  Login</i>
-        </ion-item>
+        </ion-item>-->
         <ion-item menu-close href="#/app/studentsList">
           Admin
+        </ion-item>
+        <ion-item menu-close href="#/app/profile">
+          Profile
         </ion-item>
         <ion-item menu-close href="#/app/idCard">
           <i class="icon ion-card">  ID Card</i>
@@ -51,10 +53,39 @@
         <ion-item menu-close href="#/app/chats">
           Chats
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlist
+        <ion-item menu-close href="#/">
+          <i class="icon ion-log-out">  Sign-out</i>
         </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
+
+<!--<ion-side-menus enable-menu-with-back-views="false" >
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button id="leftMenu" class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="loginBg" >
+    <ion-header-bar class="bar-stable bar-positive">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content >
+      <ion-list id="menuLinks">
+        <ion-item menu-close href="#/app/dashboard"> Dashboard </ion-item>
+        <ion-item menu-close href="#/app/profiles"> OST Team </ion-item>
+        <ion-item menu-close href="#" ng-click="logout()"> Logout </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>-->

@@ -1,5 +1,40 @@
-<ion-view view-title="Identity">
+<ion-view ng-controller="studentDetailsController as vm" view-title="{{vm.particularStudentDetails.name}}" hide-back-button="true" >
   <ion-content>
-    <img style="height: inherit;width: 100%" ng-src="img/adam.jpg"/>
+    <div class="list card">
+
+      <!--<div class="item item-thumbnail-left">
+        <img src="img/bruceLee.jpg">
+        <h2>{{vm.particularStudentDetails.name}}</h2>
+        <p>{{vm.particularStudentDetails.batch}} student</p>
+      </div>-->
+
+      <div class="item item-image">
+        <img src="img/adam.jpg">
+      </div>
+
+      <!--<a class="item item-icon-left assertive">
+        <i class="icon ion-music-note"></i>-->
+      <div style="font-family: fantasy">
+        <h3 style="font-family: monospace" class="padding-left">{{vm.particularStudentDetails.name}}</h3>
+      </div>
+      <div class="item item-input">
+        <h3 style="font-family: monospace">{{vm.particularStudentDetails.batch}} student</h3>
+      </div>
+      <div id="monospaceFont" style="font-family: cursive" class="item item-body">
+        <div><b>Status:</b> {{(vm.particularStudentDetails.status)?'Active':'Inactive'}}</div>
+        <div><b>Gender:</b> {{vm.particularStudentDetails.gender}}</div>
+        <div><b>M'Name:</b> {{vm.particularStudentDetails.motherName}}</div>
+        <div><b>F'Name:</b> {{vm.particularStudentDetails.fatherName}}</div>
+        <div><b>Email:</b> {{vm.particularStudentDetails.email}}</div>
+        <div><b>Phone:</b> {{vm.particularStudentDetails.contactNo}}</div>
+        <div><b>D.O.B:</b> {{vm.particularStudentDetails.dob}}</div>
+        <div><b>Adm Dt:</b> {{vm.particularStudentDetails.admissionDate}}</div>
+        <div><b>Reg ID:</b> {{vm.particularStudentDetails.regId}}</div>
+        <div><b>Lang Known:</b> {{vm.particularStudentDetails.langKnown}}</div>
+        <div><b>Address:</b> {{vm.particularStudentDetails.address}}</div>
+      </div>
+
+    </div>
+
   </ion-content>
 </ion-view>

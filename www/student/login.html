@@ -1,25 +1,26 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+
+<ion-view ng-controller="SampleCtrl" view-title="Sign In" class="loginBg" hide-nav-bar="true" >
+   <!--<ion-nav-title><img src="bruceLee.jpg" width="40"></ion-nav-title>-->
+
+  <ion-content class="padding">
+
+    <div class="row responsive-sm padding remvoeBP">
+      <div class="col">
+        <div class="app-logo"><img src="img/depositphotos.jpg" style="max-height: 200px;max-width: 200px;"></div>
+
+        <div class="list list-inset removePM">
+          <label class="item item-input"><input type="text" ng-model="user.username" placeholder="Email Address" > </label>
+          <label class="item item-input"><input type="password" ng-model="user.password" placeholder="Password" > </label>
+        </div>
+
+        <div class="loginButton"><button class="button ion-unlocked button-block button-balanced" > Login </button>  </div>
       </div>
-    </form>
+    </div>
+
+    <div class="row  padding removePM">
+      <div class="col"> <a class=" button-positive button button-block" ng-click="login()"><i class="icon ion-social-facebook"></i></a> </div>
+      <div class="col"> <a class="button-calm button button-block" ng-click="twitterSignIn()"><i class="icon ion-social-twitter"></i></a> </div>
+    </div>
+
   </ion-content>
-</ion-modal-view>
+</ion-view>

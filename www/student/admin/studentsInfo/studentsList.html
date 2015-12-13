@@ -1,8 +1,12 @@
-<ion-view ng-controller="studentDetailsController as vm" view-title="Students List">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="student in vm.listOfStudents" href="#/app/studentsList/{{student.$id}}" on-tap="vm.getStudentData(student.$id)">
-        <div>{{student.name}}</div>
+<ion-view view-title="Students List">
+  <ion-header-bar class="bar bar-subheader">
+    <h1 style="text-align: center" class="title">Settings</h1>
+    <button ng-controller="addStudentController as vm" class="button button-icon ion-person-add" ng-click="vm.openModal()"></button>
+  </ion-header-bar>
+  <ion-content class="has-header">
+    <ion-list  ng-controller="studentsController as vm" >
+      <ion-item ng-repeat="student in vm.listOfAllStudents" href="#/app/studentsList/{{student.$id}}">
+        <h2>{{student.name}}</h2>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 (function(){
   'use strict';
-  angular.module('starter', ['ionic', 'starter.controllers','firebase'])
+  angular.module('starter', ['ionic', 'starter.controllers','firebase','ionic-toast'])
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
@@ -31,6 +31,15 @@
           abstract: true,
           templateUrl: 'student/menu.html',
           controller: 'AppCtrl'
+          //resolve: user.email
+        })
+        .state('app.login', {
+          url: '/login',
+          views: {
+            'menuContent': {
+              templateUrl: 'student/login.html'
+            }
+          }
         })
 
         .state('app.studentsList', {
@@ -75,7 +84,7 @@
           url: '/payFeesMonthly',
           views: {
             'payFeesMonthly-tab': {
-              templateUrl: 'student/feePay/payFeesMonthly.html',
+              templateUrl: 'student/feePay/payFeesMonthly.html'
               //controller: 'HomeTabCtrl'
             }
           }
@@ -84,7 +93,7 @@
           url: '/payFeesBeltTest',
           views: {
             'payFeesBeltTest-tab': {
-              templateUrl: 'student/feePay/payFeesBeltTest.html',
+              templateUrl: 'student/feePay/payFeesBeltTest.html'
               //controller: 'HomeTabCtrl'
             }
           }
@@ -169,28 +178,8 @@
               controller: 'AppCtrl'
             }
           }
-        })
-
-        /*.state('app.playlists', {
-          url: '/playlists',
-          views: {
-            'menuContent': {
-              templateUrl: 'student/playlists.html',
-              controller: 'PlaylistsCtrl'
-            }
-          }
-        })
-
-        .state('app.playlist', {
-          url: '/playlists/:playlistId',
-          views: {
-            'menuContent': {
-              templateUrl: 'student/playlist.html',
-              controller: 'PlaylistCtrl'
-            }
-          }
-        })*/;
+        });
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/app/idCard');
+      $urlRouterProvider.otherwise('/app/login');
     });
 })();
